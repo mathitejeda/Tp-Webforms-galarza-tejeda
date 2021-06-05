@@ -13,6 +13,7 @@
     </asp:PlaceHolder>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/icons/css/all.css"/>
 
 </head>
 <body>
@@ -39,23 +40,18 @@
 
      
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ml-auto">
+  <a class="navbar-brand" href="/"><i class="fas fa-home fa-lg"></i> Inicio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/About">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/Contact">contact</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link"href="/Carrito">Carrito</a>
-      </li>
-    </ul>
+	  <ul class="navbar-nav">
+		  <li class="nav-item ml-auto" style="position:center; ">
+			  <a href="Carrito.aspx"class="navbar-brand"><i class="fas fa-shopping-cart fa-lg"></i>Carrito</a></div>
+
+		  </li>
+	  </ul>
   </div>
 </nav>
 
@@ -63,12 +59,19 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            <footer style="align-content:center">
+                <ul class="list-group list-group-horizontal">
+ 		  <li class="list-group-item">
+			  <a class="nav-link" href="/About">About</a>
+		  </li>
+		  <li class="list-group-item">
+			  <a class="nav-link" href="/Contact">contact</a>
+                </ul>
             </footer>
         </div>
 
     </form>
+
 </body>
 </html>
 

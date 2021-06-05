@@ -2,16 +2,18 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div class="card-deck">
+  <main role="main">
+                <div class="card-group">
                     <asp:Repeater runat="server" ID="repeater">
                         <ItemTemplate>
                             <div class="col-md-4 p-2">
                                 <div class="card">
-                                    <img src="<%#Eval("imagenUrl") %>" class="card-img-top" alt="...">
+                                    <rect style="width:100%; height=100%; fill:grey">
+                                        <img src="<%#Eval("imagenUrl") %>" class="card-img-top" alt="..." style="width:100%; height:15rem;object-fit:scale-down">
+                                        </rect>
                                     <div class="card-body">
                                         <h5 class="card-title"><%#Eval("nombre")%></h5>
-                                        <p class="card-text"><%#Eval("descripcion")%></p>
+                                        <p class="card-text">$<%#Eval("precio")%></p>
                                     </div>
                                     <a class="btn btn-primary" href="/DetalleArticulo?id=<%#Eval("id")%>">Detalle</a>
                                 </div>
@@ -22,5 +24,4 @@
             </main>
         </div>
     </div>
-
 </asp:Content>
