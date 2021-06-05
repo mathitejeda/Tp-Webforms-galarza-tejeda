@@ -2,23 +2,25 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>Bienvenido</h1>
-        <p class="lead">Compre por favor</p>
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="card-deck">
+                    <asp:Repeater runat="server" ID="repeater">
+                        <ItemTemplate>
+                            <div class="col-md-4 p-2">
+                                <div class="card">
+                                    <img src="<%#Eval("imagenUrl") %>" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%#Eval("nombre")%></h5>
+                                        <p class="card-text"><%#Eval("descripcion")%></p>
+                                    </div>
+                                    <a class="btn btn-primary" href="/Articulo?id=<%#Eval("id")%>">Detalle</a>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </main>
+        </div>
     </div>
-<table>   
-    <%foreach (Modelo.Articulo item in lista)
-		{%>
-        <tr>
-            <td>
-                <%= item.nombre %>
-            </td>
-        <td><%=item.descripcion %></td>
-        <td>
-            <%=item.precio %>
-        </td>
-        </tr>
-    <%} %>
-</table>
 
 </asp:Content>

@@ -23,6 +23,14 @@ namespace Tp_Webforms
             {
                 throw ex;
             }
+            if (!IsPostBack)
+            {
+
+               
+            }
+            
+            repeater.DataSource = lista;
+            repeater.DataBind();
         }
     }
 }
