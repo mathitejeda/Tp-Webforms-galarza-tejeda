@@ -20,7 +20,5 @@
                     </asp:Repeater>
                 </div>
             </main>
-        </div>
-    </div>
 
 </asp:Content>

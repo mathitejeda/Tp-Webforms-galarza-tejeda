@@ -174,7 +174,54 @@ namespace Controlador
             }
         }
 
-    }
+        public Articulo Detalle(int id)
 
+        {
+            Articulo articulo = new Articulo();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+
+            try
+            {
+                conexion.ConnectionString = "data source = .\\SQLEXPRESS; initial catalog = CATALOGO_DB;integrated security = sspi;";
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "select A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, M.Descripcion , C.Descripcion, A.id, M.id, C.id, A.Precio " +
+                    "from ARTICULOS as A " +
+                    "Inner Join Marcas as M on A.IdMarca = M.Id " +
+                    "Inner Join CATEGORIAS as C on A.IdCategoria = C.Id " +
+                    "where A.Id = " + id;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+
+                    articulo.codigo = lector.GetString(0);
+                    articulo.nombre = lector.GetString(1);
+                    articulo.descripcion = lector.GetString(2);
+                    articulo.imagenUrl = lector.GetString(3);
+                    articulo.marca = new Marca(lector.GetString(4));
+                    articulo.categoria = new Categoria(lector.GetString(5));
+                    articulo.id = lector.GetInt32(6);
+                    articulo.idMarca = lector.GetInt32(7);
+                    articulo.idCategoria = lector.GetInt32(8);
+                    articulo.precio = lector.GetDecimal(9);
+                    conexion.Close();
+                    
+                    return articulo;
+                }
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+
+            articulo.id = -1;            
+            conexion.Close();
+            return articulo;
+
+        }
+    }
 }
 

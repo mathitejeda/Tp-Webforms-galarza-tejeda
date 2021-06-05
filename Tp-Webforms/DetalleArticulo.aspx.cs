@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Modelo;
+using Controlador;
 
 namespace presentacionWeb
 {
@@ -12,17 +13,14 @@ namespace presentacionWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-            int id = int.Parse(Request.QueryString["id"]);
-            List<Articulo> listado = (List<Articulo>)Session["listadoArt"];
-            Articulo seleccionado = listado.Find(x => x.id == id);
+            int idSeleccionado = Convert.ToInt32(Request.QueryString["id"]);
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            ArticuloNegocio dao = new ArticuloNegocio();
+            Articulo articulo = dao.Detalle(idSeleccionado);
+            lblNombreArticulo.Text = articulo.nombre;
+            imgImagenArticulo.ImageUrl = articulo.imagenUrl; 
+            lblPrecioArticulo.Text = Convert.ToString(articulo.precio);
+            lblDescripcion.Text = articulo.descripcion;
         }
     }
 }
