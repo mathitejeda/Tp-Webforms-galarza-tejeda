@@ -78,7 +78,7 @@ namespace Controlador
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "select A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, M.Descripcion , C.Descripcion, A.Id " +
+                string consulta = "select A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, M.Descripcion , C.Descripcion,A.precio, A.Id " +
                     "from ARTICULOS as A " +
                     "Inner Join Marcas as M on A.IdMarca = M.Id " +
                     "Inner Join CATEGORIAS as C on A.IdCategoria = C.Id";
@@ -93,7 +93,8 @@ namespace Controlador
                     aux.imagenUrl = datos.Lector.GetString(3);
                     aux.marca = new Marca(datos.Lector.GetString(4));
                     aux.categoria = new Categoria(datos.Lector.GetString(5));
-                    aux.id = datos.Lector.GetInt32(6);
+                    aux.precio = datos.Lector.GetDecimal(6);
+                    aux.id = datos.Lector.GetInt32(7);
 
                     lista.Add(aux);
                 }
