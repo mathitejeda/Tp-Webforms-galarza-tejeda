@@ -18,6 +18,7 @@ namespace Tp_Webforms
             try
             {
                 lista = negocio.listar2();
+                Session.Add("listadoArt", lista);
             }
             catch (Exception ex)
             {

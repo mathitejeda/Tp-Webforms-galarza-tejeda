@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Articulo.aspx.cs" Inherits="presentacionWeb.Articulo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetalleArticulo.aspx.cs" Inherits="presentacionWeb.DetalleArticulo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <div class="card border-dark mb-3" >
@@ -12,7 +12,7 @@
           <br />
         <h3 class="card-text" style="font-weight:normal">$precio</h3>
           <br />
-         <asp:Button id="botonAgregar" Text="Agregar al carrito" CssClass="btn btn-success" runat="server"/>
+         <a href="Carrito.aspx?id=1"><asp:Button id="botonAgregar" Text="Agregar al carrito" CssClass="btn btn-success" runat="server"/></a>
          <br />
 
       </div>
