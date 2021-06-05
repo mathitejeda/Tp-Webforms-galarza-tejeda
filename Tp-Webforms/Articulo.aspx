@@ -4,7 +4,7 @@
 <div class="card border-dark mb-3" >
   <div class="row no-gutters">
     <div class="col-md-4">
-      <img src="https://th.bing.com/th/id/R59c122a1b8250b6158bc90f1e3970fe5?rik=DHWVS7%2bih6iH5g&pid=ImgRaw" style ="max-width:100%">
+      <img src="<%#Eval("imagenUrl") %>" style ="max-width:100%">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -22,7 +22,7 @@
 <div class="card border-dark mb-3">
   <div class="card-body text-dark">
     <h5 class="card-title">Descripción</h5>
-    <p class="card-text">Aca va la descripcion del producto</p>
+    <p class="card-text"><%#Eval("descripcion")%></p>
   </div>
 </div>
 </asp:Content>
