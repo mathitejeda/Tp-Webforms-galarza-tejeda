@@ -11,7 +11,7 @@ namespace presentacionWeb
 {
 
 
-    public partial class Articulo
+    public partial class DetalleArticulo
     {
 
         /// <summary>

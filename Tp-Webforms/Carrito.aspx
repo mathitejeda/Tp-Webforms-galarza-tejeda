@@ -2,15 +2,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 	<h1>Este es tu carrito de compras</h1>
 
+	<%if (carrito.Count != 0)
+		{%>
+<%foreach (Modelo.Articulo item in carrito)
+	{ %>
+
 		<div class="card mb-3" style="max-width: 620px;">
   <div class="row no-gutters">
 	  <div class="col-md-4">
-		  <img src="..." alt="...">
+		  <img src="<% =item.imagenUrl %>" alt="...">
 	  </div>
     <div class="col-md-6">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h1 class="card-title"><% =item.nombre %></h1>
+        <h3 class="card-text"><%=item.descripcion %></h3>
       </div>
     </div>
 	  <div class="col-md-2 justify-content-end">
@@ -18,5 +23,11 @@
 	  </div>
   </div>
 </div>
+	<%} %>
 
+	<%}
+		else
+		{	%>
+	<h5>Tu carrito esta vacio!</h5>
+	<%} %>
 </asp:Content>

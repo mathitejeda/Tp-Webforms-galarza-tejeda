@@ -13,7 +13,7 @@
                                         <h5 class="card-title"><%#Eval("nombre")%></h5>
                                         <p class="card-text"><%#Eval("descripcion")%></p>
                                     </div>
-                                    <a class="btn btn-primary" href="/Articulo?id=<%#Eval("id")%>">Detalle</a>
+                                    <a class="btn btn-primary" href="/DetalleArticulo?id=<%#Eval("id")%>">Detalle</a>
                                 </div>
                             </div>
                         </ItemTemplate>
