@@ -4,8 +4,7 @@
 <div class="card border-dark mb-3" >
   <div class="row no-gutters">
     <div class="col-md-4">
-      <%--<img src="<asp:Label ID="lblImagenURL" runat="server" Text="Label"></asp:Label>" style ="max-width:100%">--%>
-      <asp:Image ID="imgImagenArticulo" runat="server" />
+      <asp:Image ID="imgImagenArticulo" runat="server" CssClass="FitImage"/>
     </div>
     <div class="col-md-8">
         
@@ -14,7 +13,7 @@
           <br />
         <h3 class="card-text" style="font-weight:normal"><asp:Label ID="lblPrecioArticulo" runat="server" Text="Label"></asp:Label></h3>
           <br />
-         <a href="Carrito.aspx?id=1"><asp:Button id="botonAgregar" Text="Agregar al carrito" CssClass="btn btn-success" runat="server"/></a>
+         <a href="Carrito.aspx?id=7"><asp:Button id="botonAgregar" Text="Agregar al carrito" CssClass="btn btn-success" runat="server"/></a>
          <br />
 
       </div>
