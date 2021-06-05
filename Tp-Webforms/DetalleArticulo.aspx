@@ -13,7 +13,8 @@
           <br />
         <h3 class="card-text" style="font-weight:normal"><asp:Label ID="lblPrecioArticulo" runat="server" Text="Label"></asp:Label></h3>
           <br />
-         <a href="Carrito.aspx?id=7"><asp:Button id="botonAgregar" Text="Agregar al carrito" CssClass="btn btn-success" runat="server"/></a>
+          <%--<a class="btn btn-primary" href="Carrito.aspx?id=<asp:TextBox ID="tbId" runat="server"></asp:TextBox>">Agregar al carrito</a>--%>
+        <asp:Button id="btnAgregar" Text="Agregar al carrito" CssClass="btn btn-success" runat="server" OnClick="btnAgregar_Click"/>
          <br />
 
       </div>

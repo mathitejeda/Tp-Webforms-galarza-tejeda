@@ -11,9 +11,11 @@ namespace presentacionWeb
 {
     public partial class DetalleArticulo : System.Web.UI.Page
     {
+        public int idSeleccionado { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idSeleccionado = Convert.ToInt32(Request.QueryString["id"]);
+            idSeleccionado = Convert.ToInt32(Request.QueryString["id"]);
 
             ArticuloNegocio dao = new ArticuloNegocio();
             Articulo articulo = dao.Detalle(idSeleccionado);
@@ -21,6 +23,13 @@ namespace presentacionWeb
             imgImagenArticulo.ImageUrl = articulo.imagenUrl; 
             lblPrecioArticulo.Text = Convert.ToString(articulo.precio);
             lblDescripcion.Text = articulo.descripcion;
+            //tbId.Text = idSeleccionado.ToString();
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            //string url = "~/Carrito.aspx?id=" + idSeleccionado;
+            Response.Redirect("~/Carrito.aspx?id="+idSeleccionado);
         }
     }
 }
