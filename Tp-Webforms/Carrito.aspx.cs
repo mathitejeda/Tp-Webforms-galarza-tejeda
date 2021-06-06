@@ -63,24 +63,12 @@ namespace presentacionWeb
             {
                 Response.Redirect("~/");
             }
-
-
-
-
-
-
-           
-
         }
 
+        protected void btnSumar_Click(object sender, EventArgs e)
+        {
+            carrito = (List<CarritoDeCompras>)Session[Session.SessionID + "carrito"];
 
-
-       
-
-
-
-
-
-
+        }
     }
 }
