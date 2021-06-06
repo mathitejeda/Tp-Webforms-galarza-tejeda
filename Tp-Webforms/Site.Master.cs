@@ -18,7 +18,7 @@ namespace presentacionWeb
         List<Articulo> itemLista = new List<Articulo>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.Title = "TP WebForm Galarza Tejera ";
+            Page.Title = "TP WebForm Galarza Tejeda ";
 
             if (!IsPostBack)
             {

@@ -22,6 +22,7 @@ namespace Tp_Webforms
             }
             catch (Exception ex)
             {
+                Response.Redirect("/Error.aspx?error=" + ex.ToString());
                 throw ex;
             }
             if (!IsPostBack)

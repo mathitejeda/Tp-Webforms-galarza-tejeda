@@ -11,6 +11,8 @@ namespace Controlador
     {
         public CarritoDeCompras AgregarItem(Articulo item)
         {
+            try
+            {
             CarritoDeCompras resultado = new CarritoDeCompras();
             resultado.id = item.id;
             resultado.codigo = item.codigo;
@@ -20,6 +22,11 @@ namespace Controlador
             resultado.cantidad = 1;
             resultado.precioUnitario = Convert.ToDecimal(item.precio);
             return resultado;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

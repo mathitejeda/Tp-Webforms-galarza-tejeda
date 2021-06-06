@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %></title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -47,8 +47,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
 	  <ul class="navbar-nav">
-		  <li class="nav-item ml-auto" style="position:center; ">
-			  <a href="Carrito.aspx"class="navbar-brand"><%--<i class="fas fa-shopping-cart fa-lg"></i>--%>Carrito<asp:Label ID="lblCantidad" runat="server" Text="Label"></asp:Label></a></div>
+		  <li class="nav-item ml-auto" style="position: center;">
+			  <a href="Carrito.aspx" class="navbar-brand"><i class="fas fa-shopping-cart fa-lg"></i>Carrito<asp:Label ID="lblCantidad" runat="server" Text="Label"></asp:Label></a>
 
 		  </li>
 	  </ul>
